@@ -6,7 +6,7 @@ namespace App;
 
 final class SomeClass
 {
-    #[Foo(new Bar(SomeEnum::ONE_AND_TWO))]
+    #[Foo(new Bar(\SomeEnum::ONE_AND_TWO))]
     public function __invoke(): void
     {
     }

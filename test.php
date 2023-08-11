@@ -2,17 +2,24 @@
 
 declare(strict_types=1);
 
-spl_autoload_register(function ($class) {
-    if ($class === App\SomeEnum::class) {
-        include 'src/SomeEnum.php';
-    }
-
+spl_autoload_register(static function ($class) {
     if ($class === App\SomeClass::class) {
         include 'src/SomeClass.php';
     }
 });
 
-$enum = new ReflectionClass(App\SomeEnum::class);
+enum SomeEnum: string
+{
+    case ONE = 'ONE';
+    case TWO = 'TWO';
+
+    public const ONE_AND_TWO = [
+        self::ONE,
+        self::TWO
+    ];
+}
+
+$enum = new ReflectionClass(SomeEnum::class);
 $enum->getConstants();
 
 $class = new ReflectionClass(App\SomeClass::class);
