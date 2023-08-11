@@ -2,7 +2,15 @@
 
 declare(strict_types=1);
 
-require_once 'vendor/autoload.php';
+spl_autoload_register(function ($class) {
+    if ($class === App\SomeEnum::class) {
+        include 'src/SomeEnum.php';
+    }
+
+    if ($class === App\SomeClass::class) {
+        include 'src/SomeClass.php';
+    }
+});
 
 $enum = new ReflectionClass(App\SomeEnum::class);
 $enum->getConstants();
