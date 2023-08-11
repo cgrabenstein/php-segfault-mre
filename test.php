@@ -9,7 +9,6 @@ use App\Foo\Kernel as FooKernel;
 
 $foo = new FooKernel('test', true);
 $foo->boot();
-$foo->shutdown();
 
 $bar = new BarKernel('test', true);
 $bar->boot();
