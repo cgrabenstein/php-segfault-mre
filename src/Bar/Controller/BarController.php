@@ -13,12 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class BarController
 {
-    #[Get(
-        parameters: [
-            new PathParameter(schema: new Schema(enum: TestEnum::ONE_AND_TWO))
-        ]
-    )]
-    #[Route('/')]
+    #[PathParameter(schema: new Schema(enum: TestEnum::ONE_AND_TWO))]
     public function __invoke(): Response
     {
         return new Response();
