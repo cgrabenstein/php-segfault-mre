@@ -6,10 +6,7 @@
     "require": {
         "php": ">=8.1",
         "ext-ctype": "*",
-        "ext-iconv": "*",
-        "symfony/framework-bundle": "5.4.*",
-        "symfony/runtime": "5.4.*",
-        "symfony/yaml": "5.4.*"
+        "ext-iconv": "*"
     },
     "require-dev": {
     },

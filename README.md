@@ -9,16 +9,9 @@ Clone the repository and run `make reproduce`.
 If successful, the final lines of the output should look like this:
 
 ```
-PHPUnit 9.6.10 by Sebastian Bergmann and contributors.
-
-Runtime:       PHP 8.1.22
-
-Test 'FirstTest::testFoo' started
-Test 'FirstTest::testFoo' ended
-Test 'SecondTest::testBar' started
+docker run --rm -v /:/var/www php:8.2-cli /bin/sh -c "php /var/www/test.php"
 Segmentation fault
 make: *** [reproduce] Error 139
-
 ```
 
 # What?!
